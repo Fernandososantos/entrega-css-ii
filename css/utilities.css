@@ -1,0 +1,10 @@
+/* Utilitários extras */
+.bg-surface{ background: var(--surface); }
+.text-muted{ color: var(--muted); }
+.rounded{ border-radius: var(--radius); }
+.shadow{ box-shadow: var(--shadow); }
+.ai-center{ align-items:center; }
+.jc-between{ justify-content:space-between; }
+
+/* Layout principal */
+.site-main{ padding: var(--space-5) 0; }

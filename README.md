@@ -1,0 +1,1 @@
+# Entrega II – CSS3 Design System\n\nAbra o `index.html` para visualizar. Publique no GitHub como projeto público.

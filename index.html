@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Entrega II • Sistema de Design CSS3</title>
+  <meta name="description" content="Projeto demonstrando design system, grid 12 colunas, navegação, componentes e responsividade." />
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/utilities.css">
+</head>
+<body class="bg-surface text-content">
+  <!-- Skip link para acessibilidade -->
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo principal</a>
+
+  <!-- Header / Navegação -->
+  <header class="site-header">
+    <div class="container">
+      <a href="#" class="brand">
+        <span class="brand__logo" aria-hidden="true">◆</span>
+        <span class="brand__name">TechLab</span>
+      </a>
+
+      <!-- Botão hamburguer (mobile) -->
+      <button class="nav-toggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu" id="navToggle">
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+        <span class="nav-toggle__bar"></span>
+      </button>
+
+      <nav id="menu" class="nav" aria-label="Principal">
+        <ul class="nav__list">
+          <li class="nav__item"><a class="nav__link" href="#home">Home</a></li>
+          <li class="nav__item has-dropdown">
+            <button class="nav__link nav__button" aria-haspopup="true" aria-expanded="false">Projetos</button>
+            <ul class="dropdown" role="menu">
+              <li role="none"><a role="menuitem" class="dropdown__link" href="#cards">Cards</a></li>
+              <li role="none"><a role="menuitem" class="dropdown__link" href="#grid">Grid 12 col</a></li>
+              <li role="none"><a role="menuitem" class="dropdown__link" href="#formularios">Formulários</a></li>
+            </ul>
+          </li>
+          <li class="nav__item"><a class="nav__link" href="#componentes">Componentes</a></li>
+          <li class="nav__item"><a class="nav__link" href="#acessibilidade">Acessibilidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo" class="site-main">
+    <!-- Hero -->
+    <section id="home" class="hero container stack-6">
+      <div class="hero__content">
+        <h1 class="display">Design System CSS3 • Entrega II</h1>
+        <p class="lead">Leiaute em Grid, Flexbox, navegação responsiva com dropdown e hambúrguer, e uma biblioteca de componentes acessíveis.</p>
+        <div class="row gap-4">
+          <a class="btn btn-primary" href="#componentes">Ver Componentes</a>
+          <a class="btn btn-outline" href="#grid">Explorar Grid 12 col</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Grid 12 colunas -->
+    <section id="grid" class="container stack-6">
+      <h2 class="h2">Sistema de Grid (12 colunas)</h2>
+      <p>Exemplo de layout com colunas responsivas usando classes utilitárias <code>.col-*</code> e breakpoints <code>xs, sm, md, lg, xl</code>.</p>
+
+      <div class="grid grid-12 demo-grid">
+        <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 box">1</div>
+        <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 box">2</div>
+        <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 box">3</div>
+        <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 box">4</div>
+        <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 box">5</div>
+        <div class="col-12 sm:col-6 md:col-4 lg:col-3 xl:col-2 box">6</div>
+      </div>
+    </section>
+
+    <!-- Cards -->
+    <section id="cards" class="container stack-6">
+      <h2 class="h2">Cards Responsivos</h2>
+      <div class="grid grid-12">
+        <article class="card col-12 md:col-6 lg:col-4">
+          <img class="card__media" src="images/placeholder-1.svg" alt="Ilustração de código">
+          <div class="card__body">
+            <h3 class="h3">Projeto Front-end</h3>
+            <p>Estrutura semântica, tokens, layout fluido e componentes reutilizáveis.</p>
+            <div class="card__footer row gap-3 ai-center jc-between">
+              <div class="row gap-2 ai-center">
+                <span class="badge badge-primary">HTML</span>
+                <span class="badge badge-secondary">CSS</span>
+                <span class="badge">A11y</span>
+              </div>
+              <button class="btn btn-primary">Ver mais</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card col-12 md:col-6 lg:col-4">
+          <img class="card__media" src="images/placeholder-2.svg" alt="Ilustração de layout">
+          <div class="card__body">
+            <h3 class="h3">Sistema de Grid</h3>
+            <p>12 colunas, gutters, utilitários responsivos e alinhamentos com Flexbox.</p>
+            <div class="card__footer row gap-3 ai-center jc-between">
+              <div class="row gap-2 ai-center">
+                <span class="badge">Grid</span>
+                <span class="badge badge-outline">Flex</span>
+              </div>
+              <button class="btn btn-outline">Documentação</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card col-12 md:col-6 lg:col-4">
+          <img class="card__media" src="images/placeholder-3.svg" alt="Ilustração de dispositivos">
+          <div class="card__body">
+            <h3 class="h3">Responsividade</h3>
+            <p>5 breakpoints: xs (360), sm (576), md (768), lg (1024), xl (1280).</p>
+            <div class="card__footer row gap-3 ai-center jc-between">
+              <div class="row gap-2 ai-center">
+                <span class="tag">RWD</span>
+                <span class="tag">Mobile-first</span>
+              </div>
+              <button class="btn" disabled>Indisponível</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Formulários -->
+    <section id="formularios" class="container stack-6">
+      <h2 class="h2">Formulários com validação visual</h2>
+      <form class="form" novalidate>
+        <div class="form__group">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome" required>
+          <small class="form__hint">Obrigatório.</small>
+        </div>
+
+        <div class="form__group">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="voce@exemplo.com" required>
+          <small class="form__hint">Digite um email válido.</small>
+        </div>
+
+        <div class="form__group">
+          <label for="assunto">Assunto</label>
+          <select id="assunto" name="assunto" required>
+            <option value="">Selecione</option>
+            <option>Suporte</option>
+            <option>Projeto</option>
+            <option>Outro</option>
+          </select>
+        </div>
+
+        <div class="form__group">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="4" placeholder="Escreva aqui..." required minlength="10"></textarea>
+        </div>
+
+        <div class="row gap-3 ai-center">
+          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="reset" class="btn btn-ghost">Limpar</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Feedback: alerts, toasts, modal -->
+    <section id="componentes" class="container stack-6">
+      <h2 class="h2">Feedback UI (Alerts, Toasts, Modal)</h2>
+
+      <div class="alert alert-success">Sucesso: operação concluída.</div>
+      <div class="alert alert-info">Informação: leia a documentação do grid.</div>
+      <div class="alert alert-warning">Atenção: campos obrigatórios não preenchidos.</div>
+      <div class="alert alert-danger">Erro: ocorreu um problema.</div>
+
+      <div class="row gap-3">
+        <button class="btn btn-primary" id="toastBtn">Mostrar Toast</button>
+        <button class="btn btn-outline" id="openModal">Abrir Modal</button>
+      </div>
+
+      <!-- Toast -->
+      <div class="toast" id="demoToast" role="status" aria-live="polite">Salvo com sucesso!</div>
+
+      <!-- Modal -->
+      <dialog class="modal" id="demoModal" aria-labelledby="modalTitle">
+        <div class="modal__content stack-4">
+          <h3 id="modalTitle" class="h3">Exemplo de Modal</h3>
+          <p>Comportamento acessível usando o elemento <code>&lt;dialog&gt;</code>.</p>
+          <div class="row gap-3 jc-end">
+            <button class="btn btn-ghost" id="closeModal">Fechar</button>
+            <button class="btn btn-primary">Confirmar</button>
+          </div>
+        </div>
+      </dialog>
+    </section>
+
+    <!-- Seção Acessibilidade -->
+    <section id="acessibilidade" class="container stack-6">
+      <h2 class="h2">Práticas de Acessibilidade</h2>
+      <ul class="list">
+        <li>Contraste mínimo AA entre texto e fundo usando as variáveis de cor.</li>
+        <li>Estados visuais de foco visível (<code>:focus-visible</code>).</li>
+        <li>Semântica correta com <code>header, nav, main, section, h1..h6</code>.</li>
+        <li>Suporte a navegação por teclado nos dropdowns e no menu mobile.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container row jc-between ai-center">
+      <p>© 2025 TechLab — Entrega II</p>
+      <div class="row gap-2 ai-center">
+        <span class="tag">v1.0</span>
+        <span class="tag">MIT</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/menu.js" defer></script>
+</body>
+</html>
